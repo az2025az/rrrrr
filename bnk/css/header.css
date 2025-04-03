@@ -1,0 +1,347 @@
+@charset "utf-8";
+
+/*헤더와 푸터*/
+
+header{ 
+        width: 100%; height: 60px; 
+      
+        position: fixed; top: 0; left: 0; z-index: 999;}
+
+.h_wrap{ width: 100%; height: 60px;  
+        position: relative; }
+
+.logo{position: absolute; top:10px; left: 50%; 
+    transform: translateX(-50%); /*레트프50%니까 x축으로 -50% */
+    width: 100px; /* 이미지사이즈에 맞춰서 */
+    height: 40px; }
+
+.logo img{height: 80%; height: 80%;}
+
+/* 메뉴버튼 */
+.all_btn{width: 20px; height: 20px; position: absolute; top: 18px; left: 15px;} 
+.all_btn img{width: 100%; height: 100%;}
+
+
+/*sns버튼* - 버튼을 누르면 완전히 덮어야 한다.*/
+
+.s_btn{width: 20px; height: 20px; position: absolute; top: 16px; right: 30px;}
+.s_btn img{width: 100%; height: 100%;}
+
+
+/*메뉴*/
+nav{width: 100%; height: 100vh; 
+  background-color: #222;
+     position: fixed; top: 0; left: -100%;  z-index: 900;
+     /* 레프트 이부분은 나중에
+     제이쿼리해야해서 수정해줄 예정 */}
+
+nav .close{width: 20px; height: 20px;
+     position: absolute; top: 15px; left: 15px;}
+
+nav .close img{width: 100%; height: 100%;}     
+
+.util{display: flex; font-size: 12px; color:  #fff;
+    position: absolute; top: 60px; left: 50%;
+    transform: translate(-50%); }
+.util img{width: 20px; height: 20px;}    
+
+
+.util li{margin-left: 7px; /*
+        border-left: 1px solid  #8e9996;
+        */ padding-left: 7px;}
+
+
+.util li:first-child{border-left: 0;}  
+
+
+.util .srch from{display: none;}
+
+.close{margin-left:10%;}
+
+
+.gnb{width: 100%; position: absolute; top: 100px; left: 50%; 
+    transform: translate(-50%); color: 
+   #ffffff; text-align: center; }
+
+.gnb>li>a{padding: 13px; display: inline-block;
+            box-sizing: border-box; color: #fff;}
+
+.sub{font-size: 13px; color: #fcfcfc; background-color:rgba(142, 142, 250, 0.2);
+     display: none;  }  
+.sub li{padding: 13px; 
+       /* border-bottom: 1px solid #7e7941; */}
+
+.gnb>li{position: relative;}  
+/* .gnb>li가 포지션 릴리티브를 가지면 sub가 열렸을때 화살표가 중간으로 가게 되는데
+    해결방법은      
+    1. .gnb>li>a{position: relative; ->글자 옆에 붙음
+                 width:100%; display: block;}
+
+       .a_gnb::after{position:absolute;
+                     right:15px; top:-50% margin-top: -5px;}
+
+    2. .gnb>li{position: relative;} 를 두고
+       .a_gnb::after{position:absolute;
+              right:15px; top:0; margin-top:20px;}           
+
+
+/*화살표*/
+.a_gnb::after{ /* 가상선택자 에프터나 비포는 컨텐츠에 내용을 적으면 보여주는건데 
+                기본적으로 디스플레이블록을 해준다. */
+             content:'';
+             display: block;
+             width: 5px; height: 5px; border-left: 2px solid #7e7941;;  
+             border-bottom: 2px solid #7e7941;
+             position: absolute; right: 15px; top: 0; 
+             /* 포지션 릴리티브를 a가 아니라 li가 가지고 있어서 그런거임 
+             만약 a한테 릴리티브를 줬다면 화살표가 글자바로 옆에 가버림*/
+
+             margin-top: 20px; 
+
+            /* 포지션을 사용해서 정가운데로 정렬하는 방법
+            1. 트렌스폼을 사용해서 -50%해서 정렬하는 방법 (요방법이 제일 편해서요거사용)
+
+            2. 마진을 이용하는 방법 -  트렌스폼 대신 마진으로 맞출때
+               높이값을 보고 -마진값을 주는 방법
+               (트렌스폼이 다른곳에 사용하고 있을때 따로 맞춰야하므로 요때는 요걸 사용함)
+               예) margin-topㅇ나 margin-left */
+
+            transform: rotate(-45deg);    
+            transform: all 1s;/*부드럽게 회전*/
+
+            }   
+
+/* .a_gnb에 on이라는 클래스가 생기면 회전 
+ -> 이코드를 제이쿼리에 적어도 되지만 가상요소를 사용하고 있어서
+    제이쿼리에서는 에프터라는 가상요소를 불러올수가 없어서
+    가상 클래스를 만드는거임 */            
+.a_gnb.on::after{ transform: rotate(135deg);}      
+
+
+
+
+
+/*푸터*/
+footer{width: 100%; height: 100vh; position: relative;
+        color: #222;  
+        background-image: url(../image/h1920-1.jpg);
+         background-repeat: no-repeat; background-size: cover;
+          display: flex; flex-direction: column;
+          justify-content: center;  }
+
+
+
+.f_wrap1{width: 100%; height: auto;  position: relative;   }
+                 
+
+  
+.f_inner{width: 100%; height: auto;  margin: 0 auto;        } 
+.f_menu1 img{width: 100%; height: 100vh; }        
+
+.f_inner{width: 100%; height: auto; align-items: center; 
+        /* position: relative; */  }  
+
+.f_menu1{ width: 100%; height: auto; display: flex; padding: 10px;} 
+.f_menu1 li{margin: 0 auto;} 
+.f_menu2{ width: 100%; height: auto;
+        display: flex; font-size: 10px;} 
+
+.f_menu2 li{margin: 0 auto; display: flex; padding: 5px;
+            font-size: 7px;    }
+
+.sns{display: flex; margin: 0 auto;
+     width: 50%; justify-content: center; }
+.sns li img{ width: 50px; height: 50px; margin-top: 20px;
+       /* margin-left: 10%; margin-right: 10px; */}  
+.sns li a{width: 100%; height: 100vh;}
+.f_wrap2{width: 100%; height: auto; position: relative;
+               }
+.f_wrap2>li{margin-bottom:10px; margin-top: 10px;}               
+
+.f_wrap2 p{ color: #fff; text-align: center;
+        align-items: center;
+        font-size: 13px;}
+
+.f_wrap2 h2{width: 100%;
+        margin-top: 40px; text-align: center;}
+
+h2 a img{width: 200px; height: 50px;  
+       }
+
+.f_wrap2 h4{margin-top: 20px;     
+     text-align: center; font-size: 13px;             
+        color: #fff;}  
+
+.top_pc{display: block; position: fixed; bottom: 20px; right: 20px;} 
+
+
+
+
+
+
+
+
+
+/* 테블릿 시작 */
+
+@media all and (min-width:768px){
+
+footer{background-image:
+         url(../image/f_space.jpg); background-repeat: no-repeat;
+         background-size: cover;}        
+
+.uti{display:inline-flex}
+
+
+.f_wrap1 .f_pc{display: block;}        
+.f_wrap1 .f_mo{display: none;}
+        
+
+.gnb{width: 100%; position: absolute; top: 0px; left: 50%; 
+        transform: translate(-50%); }
+
+
+.f_menu2 li{margin: 0 auto; display: flex; padding: 5px;
+                font-size: 15px;    }
+            
+/* .box .mo{display: none;}  
+.box .pc{display: block; width: auto; height: 400px;} */
+
+
+
+
+
+
+} /*테블릿 끝*/
+
+
+
+
+/* PC 시작 */
+@media all and (min-width:1260px){
+
+/*        
+header{height: 147px; }
+.h_wrap{width: 1200px; height: 147px;  margin: 0  auto;} */
+
+header{ width: 100%;  /* height: 147px; */
+        font-size: 20px;
+        
+        position: fixed; top: 0; left: 0;
+        z-index: 999;}
+
+        .f_wrap1 .f_pc{display: block;}        
+        .f_wrap1 .f_mo{display: none;}
+        
+
+/* 모바일과 비교해서 바뀐것들을 일단 수정 */
+.all_btn{display: none;}
+.s_btn{display: none;}
+
+nav{position: unset; height: 60px;}
+/* upset - 모바일에서 사용한 포지션을 해제 */
+
+
+
+.logo{position: absolute; top:10px; left: 10%; 
+        transform: translateX(-50%); /*레트프50%니까 x축으로 -50% */
+        width: 100px; /* 이미지사이즈에 맞춰서 */
+        height: 40px; }
+    
+    .logo img{ height: 80%;}
+
+
+nav .close{display: none;}
+.sub{ position: absolute; top: 60px;}
+
+
+
+.util{ left: unset; 
+        /* 모바일에서 left를 사용했으면 PC에서 right를 사용할 수가 없음
+          left: unset; -> 초기화 한후 -> right:0; */
+          top: 0; right: 0;   }
+
+
+
+
+.gnb{display: flex; width: 1000px; justify-content: space-between;} /* 메뉴 사이간격조정 */         
+/* .gnb{display: flex; justify-content: space-between;}    요건 내가했던거 */
+.a_gnb::after{display: none;} /*화살표 안보이게*/
+.sub{display: none;}
+.logo{width: 300px;} /*로고가 넘 작아서 키우기 */
+/* .srch{display: none;}  서치 내가한거 */ 
+.util .srch from{display:block;}
+
+
+
+/* 메뉴에 호버하면 밑줄이 그어지는 듯한 효과주기 -> 밑줄이 따라 그어지는 듯하게 
+.gnb>li>a->호버하면 -> 밑줄이 그어져야 한다. (너비와 높이값을 주어 선처럼 보이게 만듥)
+ 즉 보더가 아니라 박스형태로 만들엉서 배경색과 채워지는 듯한 느낌 -> 보더랑은 다른거임
+
+ width를 이용함 / 박스형태는 ::before를 사용
+*/
+
+.gnb{color: #222;}
+.gnb>li>a{position: relative;}
+.gnb>li>a::before{ /* before, after은 인라인형태라 디스플레이 블록을 꼭 바꿔야함 */
+        content: '';
+        display: block;
+        width: 0; /* 글자 크기가 다르므로 100px로 줄수 없음 */
+        height: 3px; /* 호버하면 보여야해서 width100%에서 0으로 , 높이2에서 3으로 바꿈 */
+        background-color: #11916f;
+        /* before로 쓰면 글자의 위에 밑줄이 생김 - after을 위에서 한번써서 못씀 */
+        position: absolute; bottom: 6px; left: 0; /* 글자 밑으로 내리기 */
+        }
+ .gnb>li>a:hover::before{
+        transition: all 1.2s; width: 100%; /* 호버하면 다 보여야해서 100% */}
+
+
+
+
+
+
+/*서치 검색창 */
+
+.srch a{display: none;}
+.util{left: unset; right: 0; top: 15px;  transform: translate(0);}
+
+.util .srch form{display: block; position: relative;}
+.util .srch input{background-color: transparent; border: 0;
+                border-bottom: 1px solid #fff; padding-bottom: 3px;}
+.util form button{ position: absolute; top: 0; right: 0;}                
+.util li{margin-left: 10px; padding-left: 10px;}
+
+
+/*푸터pc */
+
+
+
+footer{position: relative;
+        height: 100vh; background-color: #fff; 
+        /* opacity: 30%; */
+        font-size: 30px; color: #222;}
+.util li{margin-left: 10px; padding-left: 10px;}
+
+.f_mo{display: none;}
+.f_pc{display: block;}
+
+            
+.f_wrap2{ width: 100%;  color: #222;
+        display: flex; justify-content: space-between;
+        align-items: center;
+        position: absolute; top: 800px; right: 0;}
+.f_wrap2{font-size: 40px; display: flex; justify-content: space-between;}        
+.sns{width: 20%; margin: 0;}
+.f_menu1{position: absolute; top: 200px; color: #222;}
+.f_wrap2 h4{margin: 0 auto; }        
+.f_menu2{font-size: 60px; 
+        position: absolute; top: 300px;}
+
+
+
+
+
+}/* PC 끝 */
+
+
+               

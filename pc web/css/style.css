@@ -1,0 +1,69 @@
+@charset "utf-8";
+*{margin: 0;padding: 0;}
+ul,li{list-style: none;}
+a{text-decoration: none; color: inherit;}
+
+/*header*/
+header{width: 100%; height: 100px; 
+    /* background-color:#03A63C;  */  margin: 0 auto;   }
+.h_wrap{width:  1440px; height: 100px; 
+     display: flex;
+    position: relative; right: 0; margin: 0 auto; }
+.h_wrap h1{width: 300px; height: 100px;
+     background-color: white;}
+h1 a{align-items: center; line-height: 100px;}
+h1 img{padding-top: 16.5px; padding-left: 50px;}
+
+
+.gnb{width:800px; height: 70px;  display: flex; justify-content: space-between;    
+    position: absolute; top: 30px; right: 20px;      
+    margin: 0 auto; }  
+ 
+    
+.gnb>li{width: calc(800px / 5); text-align: center;
+    }
+.gnb>li a{font-size: 15px; color: #03A63C; font-weight: bold; 
+    line-height: 70px; align-items: center;}    
+
+.sub{width: 100%; height: 100px; background-color: yellowgreen;
+    text-align: center; line-height: 70px; color:#00483C;
+     }
+
+.sub>li{text-align: center; line-height: 70px; color:#00483C;
+       }
+     
+
+
+.h_box{width:700px ; height: 30px; position: absolute;top: 0; right:0;
+       background-color: #03A63C;
+                
+        display: flex; }
+.h_box .guest{width: 100%; height: 100%; 
+        display: flex;align-items: center;
+        margin-left: 0;} 
+
+.guest{width: calc(700px / 6); height: 100%; 
+            display: flex; justify-content: space-between; }
+
+.guest>li {text-align: center; line-height: 30px; width: 100px;}        
+.guest>li::after{content: "|"; margin-left: 20px; }
+.guest>li:last-child::after{content: "";}
+
+.sns{width: 100%; height: 100%; 
+    display: flex; justify-content: space-between; }
+.sns>li{width:150px; height: 30px; box-sizing: border-box;}    
+.sns img{width: 30px; height: 30px;}
+
+.fam{width:200px; height: 30px;  text-align: center; 
+    display: flex; justify-content: space-between; }
+.fam>li{width:50px; height: 30px; box-sizing: border-box; margin-right: 10px;}    
+.fam img{width: auto; height: 30px;}
+
+/*
+.fam{width: 100%; height: 100px; background-color: yellowgreen;
+    text-align: center; line-height: 70px; color:#00483C;
+     }
+.fam>li{text-align: center; line-height: 70px; color:#00483C;
+        background-color: #03A63C;}     
+
+*/
